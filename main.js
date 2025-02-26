@@ -18,56 +18,56 @@ window.onscroll = () => {
 }
 
 const sr = ScrollReveal({
-	origin: 'top',
-	distance: '85px',
-	duration: 2000,
+	duration: 1000,
 	reset: true,
+	easing: 'ease-out',
+	viewFactor: 0.4,
 })
 
-sr.reveal('.home-text', { delay: 300 })
-sr.reveal('.home-img', { delay: 400 })
-sr.reveal('.container', { delay: 300 })
+sr.reveal('.home-text', { delay: 100, origin: 'left', distance: '30px' })
+sr.reveal('.home-img', { delay: 150, origin: 'right', distance: '30px' })
 
-sr.reveal('.about-img', { delay: 300 })
-sr.reveal('.about-text', { delay: 300 })
+sr.reveal('.container-box, .box', {
+	delay: 50,
+	scale: 0.7,
+	opacity: 0,
+	viewFactor: 0.4,
+})
 
-sr.reveal('.middle', {})
-sr.reveal('.row-btn,.shop-content', { delay: 300 })
+sr.reveal('.about-img', {
+	delay: 200,
+	origin: 'left',
+	distance: '30px',
+	duration: 2000,
+	viewFactor: 0.4,
+})
 
-sr.reveal('.review-content,.contact', { delay: 300 })
+sr.reveal('.about-text', {
+	delay: 250,
+	origin: 'right',
+	distance: '30px',
+	viewFactor: 0.4,
+})
 
 sr.reveal('.row', {
-	delay: 300, // Задержка перед анимацией
-	duration: 1500, // Длительность анимации 1 секунда
-	origin: 'top', // Элементы появляются сверху вниз
-	distance: '50px', // Смещение на 50px (можно убрать)
-	rotate: { x: 0, y: 180, z: 0 }, // Вращение на 180 градусов по оси Y
-	easing: 'ease-in-out', // Плавная анимация
-	reset: true, // Повтор анимации при прокрутке вверх
+	delay: 100,
+	origin: 'bottom',
+	distance: '30px',
+	rotate: { x: 0, y: 180, z: 0 },
+	opacity: 0,
+	viewFactor: 0.5,
+})
+
+sr.reveal('.review-content, .contact', {
+	delay: 100,
+	origin: 'bottom',
+	distance: '30px',
+	opacity: 0,
+	viewFactor: 0.5,
 })
 
 sr.reveal('.c-one', {
-	delay: 300, // Задержка перед анимацией
-	duration: 1500, // Длительность анимации 1 секунда
-	origin: 'top', // Элементы появляются сверху вниз
-	distance: '50px', // Смещение на 50px (можно убрать)
-	rotate: { x: 0, y: 180, z: 0 }, // Вращение на 180 градусов по оси Y
-	easing: 'ease-in-out', // Плавная анимация
-	reset: true, // Повтор анимации при прокрутке вверх
-})
-
-sr.reveal('.container-box', {
-	delay: 100, // Задержка перед анимацией
-	duration: 1000, // Длительность анимации 1 секунда
-	scale: 0.5, // Начальный размер (50% от нормального)
-	easing: 'ease-in-out', // Плавное появление
-	reset: true, // Анимация повторяется при скролле вверх
-})
-
-sr.reveal('.box', {
-	delay: 100, // Задержка перед анимацией
-	duration: 1000, // Длительность анимации 1 секунда
-	scale: 0.5, // Начальный размер (50% от нормального)
-	easing: 'ease-in-out', // Плавное появление
-	reset: true, // Анимация повторяется при скролле вверх
+	delay: 200,
+	rotate: { x: 0, y: 180, z: 0 },
+	viewFactor: 0.9,
 })
