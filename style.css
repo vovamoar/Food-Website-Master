@@ -194,6 +194,13 @@ header.sticky {
 	padding: 43px 43px 43px 43px;
 	background: var(--other-color);
 	border-radius: 3rem;
+	border: 2px solid transparent;
+	transition: box-shadow 0.5s ease, border 0.5s ease;
+}
+
+.container-box:hover {
+	border: 2px solid var(--main-color);
+	box-shadow: #ff9f0d 0px 1px 25px;
 }
 
 .container-box img {
@@ -274,6 +281,13 @@ header.sticky {
 	padding: 10px 35px 40px;
 	background: var(--other-color);
 	border-radius: 3rem;
+	transition: box-shadow 0.5s ease, border 0.5s ease;
+	border: 2px solid transparent;
+}
+
+.row:hover {
+	box-shadow: 0 5px 15px var(--main-color);
+	border: 2px solid var(--main-color);
 }
 
 .row img {
@@ -359,6 +373,13 @@ header.sticky {
 	padding: 35px;
 	background: var(--other-color);
 	border-radius: 3rem;
+	border: 2px solid transparent;
+	transition: box-shadow 0.5s ease, border 0.5s ease;
+}
+
+.box:hover {
+	border: 2px solid var(--main-color);
+	box-shadow: #ff9f0d 0px 1px 25px;
 }
 
 .box p {
@@ -488,6 +509,15 @@ header.sticky {
 	bottom: 2.2rem;
 	border-top: 2rem;
 	right: 3.2rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: scale 0.2s ease-in-out;
+}
+
+.scroll:hover {
+	scale: 1.1;
+	box-shadow: #ff9f0d 0px 1px 25px;
+	border-radius: 50%;
 }
 
 .scroll i {
@@ -496,6 +526,12 @@ header.sticky {
 	background: var(--main-color);
 	padding: 10px;
 	border-radius: 2rem;
+	transition: opacity 2s ease-in-out;
+}
+
+.show {
+	opacity: 1;
+	visibility: visible;
 }
 
 @media (max-width: 1545px) {
