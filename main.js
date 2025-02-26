@@ -69,5 +69,6 @@ sr.reveal('.review-content, .contact', {
 sr.reveal('.c-one', {
 	delay: 200,
 	rotate: { x: 0, y: 180, z: 0 },
+	duration: 1000,
 	viewFactor: 0.9,
 })
