@@ -129,3 +129,13 @@ sr.reveal('.faq-item', {
 	scale: 0.9,
 	viewFactor: 0.5,
 })
+
+sr.reveal('.benefit-card', {
+	delay: 100,
+	origin: 'bottom',
+	distance: '60px',
+	interval: 200,
+	opacity: 0,
+	scale: 0.9,
+	viewFactor: 0.5,
+})
