@@ -58,7 +58,7 @@ header {
 .navlist {
 	display: flex;
 	align-items: center;
-	gap: 50px;
+	gap: 30px;
 }
 
 .navlist a {
@@ -74,6 +74,7 @@ header {
 
 .navlist a.active {
 	color: var(--main-color);
+	border-bottom: 3px solid var(--main-color);
 }
 
 .nav-icons {

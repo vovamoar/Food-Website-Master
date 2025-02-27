@@ -3,6 +3,7 @@ const scrollTopBtn = document.querySelector('.scroll')
 const faqItems = document.querySelectorAll('.faq-item')
 let menu = document.querySelector('#menu-icon')
 let navlist = document.querySelector('.navlist')
+const navListItems = document.querySelectorAll('.navlist_item')
 
 window.addEventListener('scroll', () => {
 	if (window.scrollY > 300) {
@@ -34,6 +35,17 @@ faqItems.forEach(item => {
 		}
 
 		item.classList.toggle('active')
+	})
+})
+
+navListItems.forEach(item => {
+	const navLink = item.querySelector('.navlist_link')
+	console.log(navLink)
+	navLink.addEventListener('click', () => {
+		navListItems.forEach(item =>
+			item.querySelector('.navlist_link').classList.remove('active')
+		)
+		navLink.classList.add('active')
 	})
 })
 
