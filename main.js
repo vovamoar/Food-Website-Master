@@ -11,7 +11,7 @@ window.addEventListener('scroll', () => {
 	}
 })
 
-window.addEventListener('click', () => {
+scrollTopBtn.addEventListener('click', () => {
 	window.scrollTo({
 		top: 0,
 		behavior: 'smooth',
@@ -70,6 +70,23 @@ sr.reveal('.row', {
 	distance: '30px',
 	rotate: { x: 0, y: 180, z: 0 },
 	opacity: 0,
+	viewFactor: 0.5,
+})
+
+sr.reveal('.special-box1', {
+	delay: 100,
+	origin: 'left',
+	distance: '60px',
+	opacity: 0,
+	scale: 0.7,
+	viewFactor: 0.5,
+})
+sr.reveal('.special-box2', {
+	delay: 100,
+	origin: 'right',
+	distance: '60px',
+	opacity: 0,
+	scale: 0.7,
 	viewFactor: 0.5,
 })
 
