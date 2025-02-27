@@ -1,5 +1,6 @@
 const header = document.querySelector('header')
 const scrollTopBtn = document.querySelector('.scroll')
+const faqItems = document.querySelectorAll('.faq-item')
 let menu = document.querySelector('#menu-icon')
 let navlist = document.querySelector('.navlist')
 
@@ -20,6 +21,20 @@ scrollTopBtn.addEventListener('click', () => {
 
 window.addEventListener('scroll', function () {
 	header.classList.toggle('sticky', window.scrollY > 80)
+})
+
+faqItems.forEach(item => {
+	const header = item.querySelector('.faq-header')
+
+	header.addEventListener('click', () => {
+		const currentlyActive = document.querySelector('.faq-item.active')
+
+		if (currentlyActive && currentlyActive !== item) {
+			currentlyActive.classList.remove('active')
+		}
+
+		item.classList.toggle('active')
+	})
 })
 
 menu.onclick = () => {
@@ -103,4 +118,14 @@ sr.reveal('.c-one', {
 	rotate: { x: 0, y: 180, z: 0 },
 	duration: 1000,
 	viewFactor: 0.9,
+})
+
+sr.reveal('.faq-item', {
+	delay: 100,
+	origin: 'bottom',
+	distance: '60px',
+	interval: 200,
+	opacity: 0,
+	scale: 0.9,
+	viewFactor: 0.5,
 })
