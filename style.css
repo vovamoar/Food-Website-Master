@@ -16,6 +16,7 @@
 	--text-color: #fff;
 	--other-color: #212121;
 	--second-color: #9e9e9e;
+	--red-color: #ff2828;
 	--bg-color: #111111;
 	--big-font: 4.5rem;
 	--h2-font: 2.6rem;
@@ -1440,7 +1441,7 @@ textarea.form-input {
 }
 
 .decline-btn {
-	background: #f1f1f1;
+	background-color: var(--red-color);
 	color: var(--text-color);
 	border: none;
 	flex: 1;
@@ -1448,7 +1449,7 @@ textarea.form-input {
 }
 
 .decline-btn:hover {
-	background: #e5e5e5;
+	background: #ff6b3c;
 	transform: translateY(-2px);
 }
 
