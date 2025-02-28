@@ -40,7 +40,6 @@ faqItems.forEach(item => {
 
 navListItems.forEach(item => {
 	const navLink = item.querySelector('.navlist_link')
-	console.log(navLink)
 	navLink.addEventListener('click', () => {
 		navListItems.forEach(item =>
 			item.querySelector('.navlist_link').classList.remove('active')
@@ -147,6 +146,57 @@ sr.reveal('.benefit-card', {
 	origin: 'bottom',
 	distance: '60px',
 	interval: 200,
+	opacity: 0,
+	scale: 0.9,
+	viewFactor: 0.5,
+})
+
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm')
+const formStatus = document.querySelector('.form-status')
+
+contactForm.addEventListener('submit', e => {
+	e.preventDefault()
+
+	const formData = {
+		name: document.getElementById('name').value,
+		email: document.getElementById('email').value,
+		phone: document.getElementById('phone').value,
+		message: document.getElementById('message').value,
+	}
+
+	// Simulate form submission
+	formStatus.style.display = 'block'
+
+	// Validate email
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+	if (!emailRegex.test(formData.email)) {
+		formStatus.className = 'form-status error'
+		return
+	}
+
+	// Validate phone (simple validation)
+	const phoneRegex = /^\+?[\d\s-]{10,}$/
+	if (!phoneRegex.test(formData.phone)) {
+		formStatus.className = 'form-status error'
+		return
+	}
+
+	// Simulate successful submission
+	formStatus.className = 'form-status success'
+	contactForm.reset()
+
+	// Hide status after 3 seconds
+	setTimeout(() => {
+		formStatus.style.display = 'none'
+	}, 3000)
+})
+
+// Add scroll reveal for contact form
+sr.reveal('.contact-form', {
+	delay: 100,
+	origin: 'bottom',
+	distance: '60px',
 	opacity: 0,
 	scale: 0.9,
 	viewFactor: 0.5,
