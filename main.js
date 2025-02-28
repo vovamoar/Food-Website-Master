@@ -201,3 +201,123 @@ sr.reveal('.contact-form', {
 	scale: 0.9,
 	viewFactor: 0.5,
 })
+
+// Create popups dynamically
+document.addEventListener('DOMContentLoaded', () => {
+	// Create overlay
+	const overlay = document.createElement('div')
+	overlay.className = 'overlay'
+	document.body.appendChild(overlay)
+
+	// Create cookies popup
+	const cookiesPopup = document.createElement('div')
+	cookiesPopup.className = 'cookies-popup'
+	cookiesPopup.id = 'cookiesPopup'
+	cookiesPopup.innerHTML = `
+		<div class="cookies-content">
+			<i class="bx bx-cookie"></i>
+			<div class="cookies-text">
+				<h3>Cookies Consent</h3>
+				<p>We use cookies to enhance your experience on our website. They help us analyze website usage and improve its functionality.</p>
+			</div>
+			<div class="cookies-buttons">
+				<button class="accept-btn">Accept All</button>
+				<button class="decline-btn">Decline All</button>
+				<button class="settings-btn">Settings</button>
+			</div>
+		</div>
+	`
+	document.body.appendChild(cookiesPopup)
+
+	// Create welcome popup
+	const welcomePopup = document.createElement('div')
+	welcomePopup.className = 'welcome-popup'
+	welcomePopup.id = 'welcomePopup'
+	welcomePopup.innerHTML = `
+		<div class="welcome-content">
+			<i class="bx bx-party"></i>
+			<h2>Welcome to our Food Website!</h2>
+			<p>Discover amazing recipes and delicious food. Get special offers on your first order!</p>
+			<div class="welcome-features">
+				<div class="feature">
+					<i class="bx bx-dish"></i>
+					<span>Fresh Food</span>
+				</div>
+				<div class="feature">
+					<i class="bx bx-time-five"></i>
+					<span>Fast Delivery</span>
+				</div>
+				<div class="feature">
+					<i class="bx bx-gift"></i>
+					<span>Special Offers</span>
+				</div>
+			</div>
+			<button class="welcome-btn">Get Started</button>
+		</div>
+	`
+	document.body.appendChild(welcomePopup)
+
+	// Function to show overlay
+	const showOverlay = () => {
+		overlay.classList.add('active')
+		document.body.style.overflow = 'hidden' // Prevent scrolling
+	}
+
+	// Function to hide overlay
+	const hideOverlay = () => {
+		overlay.classList.remove('active')
+		document.body.style.overflow = '' // Enable scrolling
+	}
+
+	// Show welcome popup if it's the first visit
+	if (!localStorage.getItem('welcomeShown')) {
+		setTimeout(() => {
+			welcomePopup.classList.add('active')
+			showOverlay()
+		}, 2000)
+	}
+
+	// Show cookies popup if consent not given
+	if (!localStorage.getItem('cookiesAccepted')) {
+		setTimeout(() => {
+			if (!welcomePopup.classList.contains('active')) {
+				cookiesPopup.classList.add('active')
+				showOverlay()
+			}
+		}, 3000)
+	}
+
+	// Welcome popup button
+	welcomePopup.querySelector('.welcome-btn').addEventListener('click', () => {
+		welcomePopup.classList.remove('active')
+		hideOverlay()
+		localStorage.setItem('welcomeShown', 'true')
+
+		// Show cookies popup after welcome popup is closed
+		if (!localStorage.getItem('cookiesAccepted')) {
+			setTimeout(() => {
+				cookiesPopup.classList.add('active')
+				showOverlay()
+			}, 1000)
+		}
+	})
+
+	// Cookies popup buttons
+	cookiesPopup.querySelector('.accept-btn').addEventListener('click', () => {
+		cookiesPopup.classList.remove('active')
+		hideOverlay()
+		localStorage.setItem('cookiesAccepted', 'true')
+	})
+
+	cookiesPopup.querySelector('.decline-btn').addEventListener('click', () => {
+		cookiesPopup.classList.remove('active')
+		hideOverlay()
+		localStorage.setItem('cookiesAccepted', 'false')
+	})
+
+	cookiesPopup.querySelector('.settings-btn').addEventListener('click', () => {
+		// Here you can add functionality to show detailed cookie settings
+		// For now, we'll just show an alert
+		alert('Cookie settings will be available soon!')
+	})
+})
