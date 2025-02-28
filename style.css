@@ -21,6 +21,7 @@
 	--big-font: 4.5rem;
 	--h2-font: 2.6rem;
 	--p-font: 1.1rem;
+	--box-shadow-main: #ff9f0d 0px 1px 25px;
 }
 
 body {
@@ -1436,20 +1437,20 @@ textarea.form-input {
 }
 
 .accept-btn:hover {
-	background: #ff6b3c;
+	box-shadow: var(--box-shadow-main);
 	transform: translateY(-2px);
 }
 
 .decline-btn {
 	background-color: var(--red-color);
-	color: var(--text-color);
+	color: var(--bg-color);
 	border: none;
 	flex: 1;
 	min-width: 120px;
 }
 
 .decline-btn:hover {
-	background: #ff6b3c;
+	box-shadow: var(--box-shadow-main);
 	transform: translateY(-2px);
 }
 
@@ -1593,7 +1594,8 @@ textarea.form-input {
 }
 
 .welcome-btn:hover {
-	background: #ff6b3c;
+	scale: 1.05;
+	box-shadow: var(--box-shadow-main);
 	transform: translateY(-2px);
 }
 
