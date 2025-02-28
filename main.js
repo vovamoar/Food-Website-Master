@@ -60,7 +60,7 @@ window.onscroll = () => {
 
 const sr = ScrollReveal({
 	duration: 1000,
-	reset: true,
+	reset: false,
 	easing: 'ease-out',
 	viewFactor: 0.4,
 })
