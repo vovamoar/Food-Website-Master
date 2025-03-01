@@ -62,7 +62,7 @@ const sr = ScrollReveal({
 	duration: 1000,
 	reset: false,
 	easing: 'ease-out',
-	viewFactor: 0.4,
+	viewFactor: 0.3,
 })
 
 sr.reveal('.home-text', { delay: 100, origin: 'left', distance: '30px' })
@@ -199,7 +199,7 @@ sr.reveal('.contact-form', {
 	distance: '60px',
 	opacity: 0,
 	scale: 0.9,
-	viewFactor: 0.5,
+	// viewFactor: 0.2,
 })
 
 // Create popups dynamically
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		setTimeout(() => {
 			welcomePopup.classList.add('active')
 			showOverlay()
-		}, 2000)
+		}, 1500)
 	}
 
 	// Show cookies popup if consent not given

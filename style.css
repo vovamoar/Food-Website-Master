@@ -137,6 +137,12 @@ section {
 	margin-bottom: 3rem;
 }
 
+@media screen and (max-width: 1060px) {
+	.home-text h1 {
+		margin-bottom: 2rem;
+	}
+}
+
 span {
 	color: var(--main-color);
 }
@@ -151,6 +157,12 @@ span {
 	letter-spacing: 1px;
 	border-radius: 3rem;
 	transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1060px) {
+	.btn {
+		margin-bottom: 10px;
+	}
 }
 
 .btn i {
@@ -174,6 +186,12 @@ span {
 	border-bottom: 3px solid var(--main-color);
 	color: var(--main-color);
 	transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1060px) {
+	.btn2 {
+		margin-bottom: 20px;
+	}
 }
 
 .btn2:hover {
@@ -713,7 +731,7 @@ textarea.form-input {
 
 @media (max-width: 768px) {
 	.contact {
-		padding: 70px 5% 60px;
+		padding: 0 5% 0;
 	}
 
 	.contact-form {
@@ -742,6 +760,12 @@ textarea.form-input {
 /* Special Offers */
 .special-offers {
 	padding: 70px 13% 60px;
+}
+
+@media screen and (max-width: 1060px) {
+	.special-offers {
+		padding: 0 13% 60px;
+	}
 }
 
 .special-content {
@@ -840,6 +864,12 @@ textarea.form-input {
 	padding: 70px 13% 60px;
 }
 
+@media screen and (max-width: 1060px) {
+	.faq {
+		padding: 0 13% 60px;
+	}
+}
+
 .faq-content {
 	margin-top: 4rem;
 }
@@ -910,6 +940,12 @@ textarea.form-input {
 /* Benefits Section */
 .benefits {
 	padding: 70px 13% 60px;
+}
+
+@media screen and (max-width: 1060px) {
+	.benefits {
+		padding: 0 13% 60px;
+	}
 }
 
 .benefits-content {
@@ -1019,7 +1055,7 @@ textarea.form-input {
 	}
 
 	.container {
-		padding: 100px 4% 50px;
+		padding: 60px 4% 50px;
 	}
 }
 
@@ -1104,6 +1140,8 @@ textarea.form-input {
 
 	.about {
 		grid-template-columns: 1fr;
+		gap: 22px;
+		padding-top: 0;
 	}
 
 	.about-img {
